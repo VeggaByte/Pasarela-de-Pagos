@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Códigos QR de mesas</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <section class="pin-gate card no-print" id="gate">
+    <h1>Códigos QR</h1>
+    <form id="pin-form">
+      <label for="pin">PIN del personal</label>
+      <input type="password" id="pin" inputmode="numeric" required>
+      <button class="btn btn-primary" type="submit">Ver códigos</button>
+      <p class="alert alert-error hidden" id="pin-error"></p>
+    </form>
+  </section>
+
+  <div class="hidden" id="app">
+    <header class="kitchen-header no-print">
+      <h1>Códigos QR de mesas</h1>
+      <button class="btn btn-primary btn-small" id="print">Imprimir</button>
+    </header>
+    <main class="qr-grid" id="grid"></main>
+  </div>
+  <script type="module" src="/static/qr.js"></script>
+</body>
+</html>

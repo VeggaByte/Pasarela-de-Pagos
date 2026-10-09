@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cocina</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <section class="pin-gate card" id="gate">
+    <h1>Cocina</h1>
+    <form id="pin-form">
+      <label for="pin">PIN del personal</label>
+      <input type="password" id="pin" inputmode="numeric" autocomplete="current-password" required>
+      <button class="btn btn-primary" type="submit">Entrar</button>
+      <p class="alert alert-error hidden" id="pin-error"></p>
+    </form>
+  </section>
+
+  <div class="hidden" id="app">
+    <header class="kitchen-header">
+      <h1>Cocina</h1>
+      <span class="small muted" id="conn">Conectando…</span>
+      <button class="btn btn-small" id="sound">🔔 Activar sonido</button>
+    </header>
+    <main class="board">
+      <section class="column">
+        <h2>Nuevas <span class="badge badge-warn" id="count-received">0</span></h2>
+        <p class="small muted">El cliente aún puede hacer cambios. Confirma cuando empieces a prepararla.</p>
+        <div id="col-received"></div>
+      </section>
+      <section class="column">
+        <h2>En preparación <span class="badge" id="count-preparing">0</span></h2>
+        <div id="col-preparing"></div>
+      </section>
+      <section class="column">
+        <h2>Listas <span class="badge badge-ok" id="count-ready">0</span></h2>
+        <div id="col-ready"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/static/cocina.js"></script>
+</body>
+</html>
